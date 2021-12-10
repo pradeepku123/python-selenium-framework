@@ -5,7 +5,7 @@ from src.main.page.login_page import LoginPage
 import time
 
 
-class Login_Test:
+class Test_Login:
     baseURL = 'http://localhost:3000/signin'
     username = ''
     password = ''
@@ -21,5 +21,5 @@ class Login_Test:
         self.driver.close()
 
 
-def test_login():
-    Login_Test().test_login_page()
+# def test_login():
+#     Login_Test().test_login_page()

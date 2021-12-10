@@ -45,3 +45,7 @@ pip install pytest-html
 pip install pytest
 pip install selenium
 pip install webdriver-manager
+
+## To Start
+
+python -m pytest
