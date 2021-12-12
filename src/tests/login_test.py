@@ -1,21 +1,15 @@
-import pytest
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 from src.main.page.login_page import LoginPage
-from src.main.config.conf_test import setUp
+from src.main.config.conf_test import set_up
+from src.main.utils.read_property import ReadProperty
 import time
 
 
-class Test_Login:
-    baseURL = 'http://localhost:3000/signin'
-    username = 'Katharina_Bernier'
-    password = 's3cret'
-
-    def test_login_page(self, setUp):
-        self.driver = setUp
-        self.driver.get(self.baseURL)
-        loginpage = LoginPage(self.driver)
-        loginpage.login_to_application(self.username, self.password)
+class TestLogin:
+    def test_login_page(self, set_up):
+        self.driver = set_up
+        self.driver.get(ReadProperty.get_application_url())
+        login_page: LoginPage = LoginPage(self.driver)
+        login_page.login_to_application(ReadProperty.get_user_name(), ReadProperty.get_user_password())
 
         time.sleep(3)
         self.driver.close()
