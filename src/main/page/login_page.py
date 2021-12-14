@@ -24,3 +24,4 @@ class LoginPage:
                                  self.textbox_password_id).send_keys(password)
         self.driver.find_element(By.CSS_SELECTOR,
                                  self.button_submit_css_selector).click()
+
